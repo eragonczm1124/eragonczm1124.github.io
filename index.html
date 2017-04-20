@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>StrengthInNumbers</title>
+	<link rel="stylesheet" href="jquery.mobile-1.4.5.css" />
+  <link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet"  href="jqm-icon-pack-fa.css" />
+	<script src="jquery-1.11.3.js"></script>
+	<script src="jquery.mobile-1.4.5.js"></script>
+</head>
+
+<script>
+
+
+$(document).ready(function() {
+
+
+	$('#one').on("swipeleft", function(){
+		$( ":mobile-pagecontainer" ).pagecontainer( "change", "#two", {transition: "slide"} );
+			 });
+
+	$('#two').on("swipeleft", function(){
+		 $( ":mobile-pagecontainer" ).pagecontainer( "change", "#three", {transition: "slide"} );
+		 			 });
+
+	$('#two').on("swiperight", function(){
+		$( ":mobile-pagecontainer" ).pagecontainer( "change", "#one", {transition: "slide",reverse:true} );
+			 });
+
+			 $('#three').on("swiperight", function(){
+		 		$( ":mobile-pagecontainer" ).pagecontainer( "change", "#two", {transition: "slide",reverse:true} );
+		 			 });
+
+	$('#three').on("swipeleft", function(){
+		$( ":mobile-pagecontainer" ).pagecontainer( "change", "#four", {transition: "slide"} );
+			 });
+
+			 $('#four').on("swiperight", function(){
+		 		$( ":mobile-pagecontainer" ).pagecontainer( "change", "#three", {transition: "slide",reverse:true} );
+		 			 });
+
+				$('#submitButton').on("click",function(){
+					 	$("#signupPage").show();
+					 });
+	});
+
+
+	function validInfo (){
+
+		var lastNameEntered = document.getElementById("lastNameFilled").value;
+		var firstNameEntered = document.getElementById("FirstNameFilled").value;
+		var phoneNumberEntered = document.getElementById("phoneNumberFilled").value;
+		var emailEntered = document.getElementById("emailAddressFilled").value;
+
+		if (lastNameEntered == '' || firstNameEntered == '' ) {
+			alert ('Please enter valid name dude');
+		} else if (phoneNumberEntered == '') {
+			alert ('Please enter a valid phone number');
+		} else if (emailEntered == '') {
+			alert ('Please enter a valid email address');
+		} else {
+				var lastNameEntered = document.getElementById("lastNameFilled").value;
+				var firstNameEntered = document.getElementById("FirstNameFilled").value;
+				var phoneNumberEntered = document.getElementById("phoneNumberFilled").value;
+				var emailEntered = document.getElementById("emailAddressFilled").value;
+				var regionEntered = document.getElementById("regionSelected").value;
+
+				console.log('you just click the submit button');
+				console.log(firstNameEntered+' '+lastNameEntered+', Phone Number:'+phoneNumberEntered+', email:'+emailEntered+', who lives in '+regionEntered);
+
+				alert ('Dear ' + firstNameEntered + ', please click Close to return!');
+			}
+ }
+</script>
+
+
+<body>
+
+<!-- Start of first page: #one -->
+<div data-role="page" id="one" data-theme="b">
+
+	<div data-role="header">
+
+		<h1 style="font-size:25px; padding:10px auto; margin:0 auto; background-color:black;">Strength In Numbers 		<a href="#signupPage"><span style="font-size:15px; float:right; margin-right:2px;" id="submitButton">sign up</span></a></h1>
+		<div data-role="navbar">
+    	<ul class="navhome">
+      	<li><a href="#" style="background-color:gold; text-shadow:none; color:black;">Home</a></li>
+      	<li><a href="#two" data-transition="slide" id="playersHome" >Players</a></li>
+      	<li><a href="#three" data-transition="slide" >Contact</a></li>
+        <li><a href="#four" data-transition="slide">Upcoming</a></li>
+    	</ul>
+  	</div>
+	</div><!-- /header -->
+
+	<div data-role="content" class="home2">
+	<div data-role="content" style="max-width:100%; " id="homepagecontent">
+		<h1 style="text-transform: uppercase; text-align:center;">Welcome to the Home of the <span style="color:gold;">Warriors</span> !</h1>
+    <h4 style="font-weight:light; text-align:right;">--- created by Eragon, student from Beijing, fan of the <span style="color:gold;">Golden State Warriors</span> </h4>
+		<p style="margin:50px 0px 0px 0px; text-align:center; text-decoration:underline;">Hi There! This app is created for recreational use, which constantly updates the latest news of the GSW. <br/>This is my first time writing an app like this, so please enjoy :)</p>
+  </div>
+</div><!-- /content -->
+
+
+</div><!-- /page one -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="two" data-theme="b">
+
+	<div data-role="header">
+		<h1 style="font-size:20px; padding:10px auto; margin:0 auto; background-color:black;">Strength In Numbers 		<a href="#signupPage"><span style="font-size:15px; float:right; margin-right:2px; text-decoration:none;" id="submitButton">sign up</span></a></h1>
+		<div data-role="navbar">
+	    <ul>
+	      <li><a href="#one" data-transition="slide" data-direction="reverse">Home</a></li>
+	      <li><a href="#anylink" style="background-color:gold; text-shadow:none; color:black;">Players</a></li>
+	      <li><a href="#three" data-transition="slide">Contact</a></li>
+        <li><a href="#four" data-transition="slide">Upcoming</a></li>
+
+	    </ul>
+	  </div>
+	</div><!-- /header -->
+
+	<div data-role="content" >
+		<div class="curry1">
+		<div id="curryPhoto">
+			<img src="img/curry.jpg" style="width:60%; height:auto; float:left; margin-right:15px; margin-bottom: 15px; " />
+		</div>
+		<h1 style="color:gold; margin-left:60%; margin-right: 10px; position:relative;">Steph Curry</h1>
+		<p id="curryText">Wardell Stephen Curry II is an American professional basketball player for the Golden State Warriors of the National Basketball Association. Many players and analysts have called him the greatest shooter in NBA history.</p>
+	</div>
+
+<br/>
+
+<div class="klay1">
+<div id="klayPhoto">
+	<img src="img/klay.jpg" style="width:60%; height:auto; float:left; margin-right:15px; margin-bottom: 15px; " />
+</div>
+<h1 style="color:gold; margin-left:60%; margin-right: 10px; position:relative;">Klay Thompson</h1>
+<p id="curryText">Klay Alexander Thompson is an American professional basketball player for the Golden State Warriors of the National Basketball Association.</p>
+</div>
+
+</div>
+</div><!-- /page two -->
+
+
+
+
+
+
+
+
+
+
+<!-- Start of third page: contact-->
+<div data-role="page" id="three" data-theme="b">
+
+	<div data-role="header" >
+		<h1 style="font-size:20px; padding:10px auto; margin:0 auto; background-color:black;">Strength In Numbers 	<a href="#signupPage"><span style="font-size:15px; float:right; margin-right:2px;" id="submitButton">sign up</span></a></h1>
+		<div data-role="navbar">
+	    <ul>
+	      <li><a href="#one" data-transition="slide" data-direction="reverse">Home</a></li>
+	      <li><a href="#two" data-transition="slide" data-direction="reverse">Players</a></li>
+	      <li><a href="#" style="background-color:gold; text-shadow:none; color:black;">Contact</a></li>
+        <li><a href="#four" data-transition="slide">Upcoming</a></li>
+	    </ul>
+	  </div>
+	</div><!-- /header -->
+
+	<div data-role="content" id="contact1">
+		<div data-role="content" style="max-width:70%; " id="contactContent">
+			<p>Interested? Feel free to</p>
+			<h1 style="text-transform: uppercase; text-align:center; color:gold;">Contact US</h1>
+			<a href="#" class="ui-btn ui-icon-phone ui-btn-icon-left ui-nodisc-icon" style="background-color:rgba(128, 128, 128, 0.6); margin-bottom:20px; height: 30px; ">
+				<h2 style="text-transform: uppercase; text-align:center; font-size:18px; margin:5px auto;">CALL: 800-GSW-HOOP</h2>
+			</a>
+			<a href="#" class="ui-btn ui-icon-mail ui-btn-icon-left ui-nodisc-icon" style="background-color:rgba(128, 128, 128, 0.6); margin-bottom:20px; height: 30px; ">
+				<h2 style="text-align:center; font-size:18px; margin:5px auto;">ticketing@warriors.com</h2>
+			</a>
+			<ul style="" id="contactList">
+				<li><a href="https://www.facebook.com/warriors" data-role="button" data-icon="facebook-square" class="ui-link ui-btn ui-icon-facebook-square ui-btn-icon-left ui-corner-all ui-btn-active"style=" margin-bottom:40px; background-color:#3b5998; border-style:none;"></a></li>
+				<li><a href="https://twitter.com/warriors" data-role="button" data-icon="twitter" class="ui-link ui-btn ui-icon-twitter ui-btn-icon-left ui-shadow ui-corner-all ui-btn-active" style=" margin-bottom:40px; background-color:#1dcaff; border-style:none;"></a></li>
+				<li><a href="https://plus.google.com/+warriors" data-role="button" data-icon="google-plus" class="ui-link ui-btn ui-icon-google-plus ui-btn-icon-left ui-shadow ui-corner-all ui-btn-active" style=" margin-bottom:40px; background-color:#d34836; border-style:none;"></a></li>
+				<li><a href="https://www.youtube.com/warriors" data-role="button" data-icon="youtube-square" class="ui-link ui-btn ui-icon-youtube-square ui-btn-icon-left ui-shadow ui-corner-all ui-btn-active"style=" margin-bottom:40px; background-color:#e52d27; border-style:none;"></a></li>
+		</ul>
+
+	  </div>
+	</div><!-- /content -->
+
+
+</div><!--  -->
+
+
+
+
+<!-- schedule page-->
+<div data-role="page" id="four" data-theme="b">
+
+	<div data-role="header" >
+		<h1 style="font-size:20px; padding:10px auto; margin:0 auto; background-color:black;">Strength In Numbers 	<a href="#signupPage"><span style="font-size:15px; float:right; margin-right:2px;" id="submitButton">sign up</span></a></h1>
+		<div data-role="navbar">
+	    <ul>
+	      <li><a href="#one" data-transition="slide" data-direction="reverse">Home</a></li>
+	      <li><a href="#two" data-transition="slide" data-direction="reverse">Players</a></li>
+	      <li><a href="#three" data-transition="slide" data-direction="reverse">Contact</a></li>
+        <li><a href="#" style="background-color:gold; text-shadow:none; color:black;" >Upcoming</a></li>
+
+	    </ul>
+	  </div>
+	</div><!-- /header -->
+
+	<div data-role="content" id="upcomingContent">
+		<div class="story"id="story1">
+			<h2>2016-2017 Season Tickets -- </h2>
+			<a href="https://www.gs-warriors.com/forms/secure/1314_priority_waitlist.html" style="text-decoration:none;"><h1>JOIN US</h1></a>
+			<img src="img/waitlist.jpg" style="width:100%; height:auto;"/>
+		</div>
+
+		<div class="story"id="story2">
+			<h2>Coming Soon -- </h2>
+			<h1>2016-2017 Regular Season Schedules</h1>
+			<p>Visit <a href="http://www.nba.com/warriors/">http://www.nba.com/warriors/</a> for more detail.</p>
+		</div>
+
+		<div class="story"id="story3">
+			<h2>Welcome 35 -- </h2>
+			<a href="http://www.nba.com/warriors/gameday/20160726/recap" style="text-decoration:none;"><h1>Kevin Durant #5 Team USA</h1></a>
+			<img src="img/durantChina.jpg" style="width:100%; height:auto;"/>
+
+		</div>
+
+		</div>
+	</div><!-- /content -->
+
+
+</div><!-- schedule -->
+
+<div data-role="content" id="signupPage" style="display:none;">
+<div class="thingsEntered" style="width:80%;margin:20px auto; ">
+
+<label style="width:100%;"> Last name </label>
+<input id="lastNameFilled" type="text" name="lastName" style="width:100%;">
+
+<label style="width:100%;"> First name </label>
+<input id="FirstNameFilled" type="text" name="firstName" style="width:100%;">
+
+<label style="width:100%;"> Phone number </label>
+<input id="phoneNumberFilled" type="number" name="phoneNumber" style="width:100%;">
+
+<label style="width:100%;"> Email address </label>
+<input id="emailAddressFilled" type="text" name="emailAddress" style="width:100%;">
+<br>
+<label style="width:100%;"> Regions </label>
+<select style="width:60%; margin:0 auto;" id="regionSelected">
+	<option value="Unknown" disabled selected> Please Select Region </option>
+	<option value="North America">North America</option>
+	<option value="South America">South America</option>
+	<option value="Asia">Asia</option>
+	<option value="Europe">Europe</option>
+	<option value="Africa">Africa</option>
+	<option value="Mid East">Mid East</option>
+	<option value="Austrilia">Austrilia</option>
+</select>
+<br>
+<label style="margin-top:15px; margin-left:auto; margin-right: auto;"> Click to Confirm whenever you are finished </label>
+<input type="button" name="Confirm" value="Submit" onclick="validInfo();" style="width:100%;" >
+<a href="#one"><input type="button" name="Confirm" value="Close"  style="width:100%;"></a>
+
+</div>
+</div>
+
+</body>
+</html>
